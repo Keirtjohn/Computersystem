@@ -5,6 +5,7 @@
  */
 package Myapps;
 
+import Admin.CreateForm;
 import Admin.ManagerDash;
 import Config.DbConnector;
 import Config.PasswordHasher;
@@ -168,6 +169,11 @@ public class LoginForm extends javax.swing.JFrame {
                 signupMouseClicked(evt);
             }
         });
+        signup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signupActionPerformed(evt);
+            }
+        });
         jPanel1.add(signup);
         signup.setBounds(110, 400, 80, 30);
 
@@ -275,6 +281,12 @@ public class LoginForm extends javax.swing.JFrame {
         password.setEchoChar('*');
         }
     }//GEN-LAST:event_ckboxActionPerformed
+
+    private void signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupActionPerformed
+        RegisterForm rf = new RegisterForm();
+        rf.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_signupActionPerformed
 
     /**
      * @param args the command line arguments

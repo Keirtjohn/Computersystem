@@ -6,9 +6,12 @@
 package Admin;
 
 import Config.DbConnector;
+import Config.PasswordHasher;
 import Config.Session;
+import Myapps.LoginForm;
 import USERS.UserDash;
 import java.awt.Color;
+import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -106,6 +109,11 @@ public class ManagerForm extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONS/icons8-add-user-30.png"))); // NOI18N
         jLabel8.setText("    ADD");
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 140, -1));
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -118,7 +126,7 @@ public class ManagerForm extends javax.swing.JFrame {
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 40, 160, 510);
+        jPanel2.setBounds(0, 40, 160, 520);
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -144,7 +152,7 @@ public class ManagerForm extends javax.swing.JFrame {
         jScrollPane1.setViewportView(usertable);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(180, 70, 750, 460);
+        jScrollPane1.setBounds(180, 70, 760, 460);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -154,7 +162,7 @@ public class ManagerForm extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE)
         );
 
         pack();
@@ -195,6 +203,12 @@ public class ManagerForm extends javax.swing.JFrame {
         ud.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+      CreateForm cf = new CreateForm();
+        cf.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel8MouseClicked
 
     /**
      * @param args the command line arguments
@@ -247,6 +261,7 @@ public class ManagerForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPasswordField pass;
     private javax.swing.JTable usertable;
     // End of variables declaration//GEN-END:variables
 }
